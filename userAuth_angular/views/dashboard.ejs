@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>DashBoard</title>
+    <!--STYLES-->
+    <link rel="stylesheet" href="/styles/angular-toastr.css">
+    <link rel="stylesheet" href="/styles/app.css">
+    <link rel="stylesheet" href="/styles/foundation.css">
+    <link rel="stylesheet" href="/styles/importer.css">
+    <!--STYLES END-->
+  </head>
+  <body ng-app="dashMod" ng-controller="DashCtrl" ng-init="getUser()">
+    <div class="top-bar">
+      <div class="top-bar-left">
+        <ul class="dropdown menu" data-dropdown-menu>
+          <li class="menu-text">User Authentication</li>
+        </ul>
+      </div>
+      <div class="top-bar-right">
+        <ul class="menu right">
+          <li><button type="button" class="active button" ng-click="logout()">Logout</button></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row">
+      <h1>Dashboard</h1>
+      <div class="row">
+        <div class="large-2 columns">
+          <img ng-src="{{user.gravatarUrl}}" alt="{{user.name}}">
+        </div>
+        <div class="large-8 columns">
+          <ul>
+            <li>Name: {{user.name}}</li>
+            <li>Email: {{user.email}}</li>
+            <li>Member Since: {{user.createdAt}}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!--SCRIPTS-->
+    <script src="/js/dependencies/sails.io.js"></script>
+    <script src="/js/dependencies/jquery-3.1.1.js"></script>
+    <script src="/js/dependencies/angular.js"></script>
+    <script src="/js/dependencies/angular-toastr.js"></script>
+    <script src="/js/dependencies/angular-toastr.tpls.js"></script>
+    <script src="/js/dependencies/foundation.min.js"></script>
+    <script src="/js/private/dashboard/dashMod.js"></script>
+    <script src="/js/private/dashboard/dashCtrl.js"></script>
+    <script src="/js/public/login/loginMod.js"></script>
+    <script src="/js/public/login/loginCtrl.js"></script>
+    <script src="/js/public/signup/signupMod.js"></script>
+    <script src="/js/public/signup/signupCtrl.js"></script>
+    <!--SCRIPTS END-->
+  </body>
+</html>
